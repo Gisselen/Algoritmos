@@ -1,0 +1,186 @@
+Algoritmo "Questao 2"
+
+
+Var
+   vet:vetor [1..50] de inteiro
+   menu:inteiro
+   x:inteiro
+   total:inteiro
+   elemento:inteiro
+   j:inteiro
+
+
+procedimento adicionar
+var
+   i:inteiro
+   menu1:inteiro
+
+inicio
+   limpatela
+   escreval("Adicionar numeros")
+   escreval("Escolha Faixa: [A], [B], [C]")
+   leia(menu)
+   se menu1="A" entao
+      escreva("Insira Valor:")
+      leia(i)
+      se (i >= 1) e (i <= 20) entao
+         i<-i+1
+         Escreva ("Valor inserido é",i)
+
+      senao
+         se menu1="B" entao
+            escreva("Insira Valor:")
+            leia(i)
+            se (i >= 1) e (i <= 20) entao
+               i<-i+1
+               Escreva ("Valor inserido é",i)
+            senao
+               se menu1="C" entao
+                  escreva("Insira Valor:")
+                  leia(i)
+                  se (i >= 1) e (i <= 20) entao
+                     i<-i+1
+                     Escreva ("Valor inserido é",i)
+                  fimse
+               fimse
+            fimse
+         fimse
+      fimse
+   fimse
+fimprocedimento
+
+procedimento Pesquisar ()
+var
+   num:inteiro
+   n:inteiro
+   menu2:inteiro
+inicio
+   limpatela
+   escreval("Insira o numero:")
+   leia(num)
+   para n de 1 ate (total-1) faca
+      se (vet=num) entao
+         escreval("Numero: ",vet)
+      senao
+         escreval ("Numero não encontrado")
+      fimse
+   fimpara
+   leia(num)
+   total<-1
+   repita
+      limpatela
+      escreval ("OPÇÃO DE PESQUISA")
+      escreval("[1] PESQUISA SEQUENCIAL")
+      escreval("[2] PESQUISA BINARIA")
+      escreval("[3] SAIR")
+      escreval("Escolha:")
+      leia menu2
+      escolha menu2
+      caso 1
+         busca(x)
+      caso 2
+         BuscaBinaria (x,p)
+      fimescolha
+   ate (menu2 = 3)
+fimprocedimento
+funcao buscar(x:inteiro):inteiro
+var
+   retorna:inteiro
+inicio
+   retorna <- -1
+   para n de 1 ate (total -1) faca
+      se (vet [total] = x)  entao
+         retorna <- total
+         para total de 1 ate 100 faca
+            escreva ("Numero",total)
+            leia(vet[total])
+         fimpara
+         repita
+            escreval ("Procura num")
+            leia(x)
+            elemento <- buscar(x)
+            se (elemento >0) entao
+               escreval ("Elemento"elemento)
+            senao
+               escreval ("Num não encontrado !!!")
+            fimse
+         ate (elemento = -1)
+      fimse
+   fimpara
+   retorne retorna
+fimfuncao
+
+
+funcao BuscaBinaria (x,p:inteiro):inteiro
+var retorna,min,max,meio:inteiro
+   retorna <- -1
+   min <-1
+   max <- p
+   enquanto (min <=max) faca
+      meio <- (min +max) \ 2
+      se (vet[j] = x) então
+         retorna <-meio
+         interrompa
+      senao
+         se(vet[meio] < x)então
+            min <-meio +1
+         senao
+            max <-meio -1
+         fimse
+      fimse
+   fimenquanto
+   retorne retorna
+   escreval("vetor ordenado")
+   para j de 1 ate (total-1) faca
+      escreva("vetor",j)
+      leia(vet[j])
+   fimpara
+   repita
+      escreva("buscar elemento")
+      leia(elemento)
+      elemento <- BuscaBinaria(elemento,10)
+      se (elemento >= 0)então
+         escreval("elemento na posição!",elemento)
+      senao
+         escreval("elemento n encontrado")
+      fimse
+   ate(elemento = -1)
+fimfuncao
+
+procedimento remover
+var
+   num:inteiro
+   n:inteiro
+inicio
+   escreval("Apagar Registro: ")
+   escreval("Insira o numero que queria remover: ")
+   leia(num)
+   para n de 1  (x-1)faca
+      vet[n].num <- vet[n].num + 1
+      n <- n-1
+
+   fimpara
+fimprocedimento
+Inicio
+   total <- 1
+   repita
+      limpatela
+      escreval ("MENU")
+      escreval("[1] ADICIONAR")
+      escreval("[2] PESQUISAR")
+      escreval("[3] ORDENAR")
+      escreval("[4] REMOVER")
+      escreval("[0] SAIR")
+      escreval("OPÇÃO: ")
+      leia (menu)
+
+      escolha menu
+      caso 1
+         adicionar()
+      caso 2
+         Pesquisar ()
+
+      caso 3 Remover()
+      fimescolha
+   ate (menu = 0)
+fimalgoritmo
