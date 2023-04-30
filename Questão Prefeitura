@@ -1,0 +1,63 @@
+Algoritmo "prefeitura"
+
+Var
+salario, filhos, mediasalario, mediafilhos, totalsalario, maiorsalario: real
+quantidade550, totalfamilia, totalfilhos, percentual: real
+
+
+procedimento contagem
+inicio
+mediasalario <-0
+mediafilhos <-0
+maiorsalario <-0
+quantidade550 <-0
+totalfamilia <-0
+
+
+mediasalario <-totalsalario / totalfamilia
+mediafilhos <- totalfilhos / totalfamilia
+percentual <- quantidade550 * 100 / totalfamilia
+
+escreval ("A média de salário da população é de R$ ",mediasalario)
+escreval ("A média de filhos por familia é de : ", mediafilhos)
+escreval ("O maior salário encontrado foi de R$ : ",maiorsalario)
+escreval ("O percentual de familias com salário de até R$ 550,00 reais é de :",percentual)
+fimprocedimento
+
+
+
+
+Inicio
+escreval ("Digite a quantidade de filhos")
+leia (filhos)
+escreval ("Digite o salário da familia")
+leia (salario)
+enquanto (salario >0) faca
+
+totalsalario <- totalsalario + salario
+totalfilhos <- totalfilhos + filhos
+totalfamilia <- totalfamilia + 1
+se (salario > maiorsalario) entao
+maiorsalario <- salario
+fimse
+
+se (salario <= 550) entao
+quantidade550 <- +1
+fimse
+limpatela
+
+escreval ("PARA SAIR DIGITE A QUANTIDADE DE FILHOS E O SALÁRIO COM O VALOR [0]")
+escreval ("Digite a quantidade de filhos")
+leia (filhos)
+escreval ("Digite o salário da familia")
+leia (salario)
+contagem
+
+
+
+
+
+
+
+fimenquanto
+Fimalgoritmo
