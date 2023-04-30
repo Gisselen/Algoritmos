@@ -1,0 +1,44 @@
+Algoritmo "valor"
+
+Var
+
+valorc,p:real
+esc:inteiro
+
+  funcao CalculaPagamento(p:real; esc:inteiro);inteiro
+inicio
+  escolha(esc)
+  caso 1:
+  valorc <- p-(p*10/100)
+  escreva("Ganhou 10% de desconto")
+
+  caso 2:
+  valorc <- p-(p*5/100)
+  escreva("Ganhou 5% de desconto.")
+  
+  caso 3:
+  valorc <- p/2
+  escreva("Valor a pagar:"p)
+  
+  caso 4:
+  valorc <- p+(p*10/100)
+  escreva("Pagando com juros:",valorc)
+  escreva("2x de:",(valorc/2))
+    fimescolha
+
+fimfuncao
+Inicio
+Escreva (" Digite o valor do produto :")
+Leia (p)
+Escreval (" Digite uma opção para pagamento:")
+Escreval (" 1. À Vista em dinheiro ou cheque.")
+Escreval(" 2. À Vista no cartão de crédito.")
+Escreval (" 3. Em 2x sem juros.")
+Escreval (" 4. Em 2x com 10% de juros.")
+CalculaPagamento <- esc
+Leia(esc)
+
+
+Fimescolha
+
+Fimalgoritmo
