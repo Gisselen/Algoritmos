@@ -1,0 +1,64 @@
+Algoritmo "ciclodetempodejogo"
+Var
+horainicial:inteiro
+minutoinicial:inteiro
+horafinal:inteiro
+minutofinal:inteiro
+
+Inicio
+procedimento tempojogo(horainicio, minutoinicio, horaf, minutof:inteiro)
+var
+qdt, qdmnj: inteiro //qdt - quantidade de hora total e qdmnj - quantidade de minutos no jogo.
+
+inicio
+qdt <- 0
+se (horainicio >= horaf) entao
+qdt<-12
+horaf<-horaf+12
+fimse
+
+
+se (minutoincio > minutof) entao
+qdt <- qdt -1
+minutof <- minutof +60
+fimse
+
+qdmnj <- (minutof - minutoinicio)
+qdt <- qdt + (horaf - horainicio)
+
+escreva("O jogo teve",qtd,"horas e teve",qdmnj,"minutos")
+fimprocedimento
+
+escreval("INSIRA O HORARIO INICIAL DO JOGO: ")
+leia(horainicial)
+
+enquanto (horainicial > 23) ou (horainicial < 0) faça
+escreval ("HORA INCORRETA!! HORA INICIAL :")
+leia (horainicial)
+fimenquanto
+
+escreva("Minuto Inicial : ")
+leia (minutoinicial)
+enquanto (minutoinicial > 59) ou (minutoinicial < 0) faça
+escreval("MINUTOS INCORRETOS!! MINUTO INICIAL: ")
+leia(minutoinicial)
+fimenquanto
+
+escreval("Informe o horario final do jogo: ")
+leia(horafinal)
+enquanto(horafinal > 23) ou (horafinal <0)faça
+escreva("HORA FINAL INCORRETA!! HORA FINAL: ")
+leia(horafinal)
+fimenquanto
+
+
+escreva("minuto final: ")
+leia(minutofinal)
+enquanto(minutofinal > 59) ou (minutofinal < 0) faça
+escreva("MINUTO INFORMADO INCORRETO!! MINUTO FINAL: ")
+leia(minutofinal)
+fimenquanto
+
+tempojogo(horainicial, minutoinicial, horafinal, minutofinal)
+
+Fimalgoritmo
