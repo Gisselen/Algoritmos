@@ -1,0 +1,189 @@
+Algoritmo "testingAv2"
+
+tipo
+    alunoDados = registro
+      identificador: inteiro
+      nome: caractere
+      media: real
+      aprovado: logico
+fimregistro
+
+Var
+//
+aluno: vetor [1..50] de alunoDados
+x: inteiro
+h: inteiro
+i: inteiro
+op: inteiro
+
+//1
+procedimento adicionar()
+var
+//
+inicio
+    limpatela
+    se (i<51) entao
+        escreval("Adicionando informações dos alunos")
+        escreval("--> Seu nome:")
+        leia(aluno[i].identificador)
+        escreval()
+        leia(aluno[i].nome)
+        escreval()
+        leia(aluno[i].media)
+        i <- i+1
+    senao
+        escreval("Sistema lotado!")
+    fimse
+
+fimprocedimento
+//2
+procedimento buscar (x, n:inteiro)
+var
+    i:inteiro
+inicio
+    i <- 1
+    v[n+1] <- x
+    enquanto (x <> v[i]) faca
+        i<- i+1
+    fimenquanto
+    se (i<=n) entao
+        escreval("encontrado na chave: ", i)
+    senao
+        escreval("encontrado na chave: ", i)
+    fimse
+fimprocedimento
+//procedimentos quickSort, selectionSort, insertionSort:
+
+//1- InsertionSort
+procedimento insertionSort(vet[] , n:inteiro)
+//
+var
+    i, j, key: inteiro
+inicio
+//
+    para j de 1 ate n faca
+        chave := vet[j]
+        i := j-1
+            enquanto ((i>0)e(vet[i]>key)) faca
+            vet[i+1] := vet[i]
+            i := i-1
+            fimenquanto
+    vet[i+1] := key
+    fimpara
+fimprocedimento
+
+//2- SelectionSort
+
+procedimento selectionSort(vet[] , n:inteiro)
+//
+var
+i, j, min, aux: inteiro
+//
+inicio
+    para i de 1 ate n-1 faca
+        min <- i
+            para j de i+1 ate n faca
+                se vet[j] < vet[min] entao
+                    min <- j
+                fimse
+            fimpara
+        se min <> i entao
+            aux <- vet [i]
+            vet[i] <- vet[min]
+            vet[min] <- aux
+        fimse
+    fimpara
+fimprocedimento
+
+//3- QuickSort
+
+procedimento quickSort(X[], IniVet, FimVet)
+//
+var
+i, j, pivo, aux
+//
+início
+i <- IniVet
+j <- FimVet
+    pivo <- X[(IniVet + FimVet) div 2]
+        enquanto(i < j) faça
+            enquanto (X[i] < pivo) faça
+                i <- i + 1
+            fimEnquanto
+            enquanto (X[j] > pivo) faça
+                j <- j - 1
+            fimEnquanto
+        se (i <= j) então
+            aux <- X[i]
+            X[i] <- X[j]
+            X[j] <- aux
+            i <- i + 1
+            j <- j - 1
+        fimSe
+        fimEnquanto
+    se (j > IniVet) então
+        QuickSort(X, IniVet, j)
+    fimSe
+    se (i < FimVet) então
+        QuickSort(X, i, FimVet)
+    fimse
+fimprocedimento
+//3
+procedimento ordenar()
+//
+var
+inicial: inteiro
+final: inteiro
+menu: inteiro
+
+inicio
+escreval("--> Ordenando informações")
+escreval("[1] --> Ordenando com insertionSort")
+escreval("[2] --> ordenando com selectionSort")
+escreval("[3] --> Ordenando com quickSort")
+escreval("[0] --> Sair")
+escreval("Opcao:")
+    escolha op
+        caso 0
+            escreval("Até mais!")
+        caso 1
+            insertionSort(aluno, 51)
+        caso 2
+            selectionSort(aluno, 51)
+        caso 3
+            escreval("-->Digite o indice inicial que deseja ordenar:")
+            leia(inicial)
+            escreval("--> Digite o indice final que deseja ordenar:")
+            leia(final)
+            quickSort(aluno, inicial, final)
+        fimescolha
+    ate (op=0)
+
+fimprocedimento
+
+inicio
+    i <-1
+    repita
+        limpatela
+        escreval("--> PROGRAMA DE CADASTRO")
+        escreval("[1] --> adicionar informações")
+        escreval("[2] --> Buscar informações")
+        escreval("[3] --> Ordenar informações")
+        escreval("[4] --> Exibir informações")
+        escreval("[0] --> Sair")
+        escreval("Opcao:")
+            escolha op
+                caso 0
+                    escreval("Até mais!")
+                caso 1
+                    adicionar()
+                caso 2
+                    buscar()
+                caso 3
+                    ordenar()
+                caso 4
+                    exibir()
+            fimescolha
+    ate (op=0)
+
+fimalgoritmo
