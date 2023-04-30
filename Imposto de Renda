@@ -1,0 +1,42 @@
+Algoritmo "IMPOSTO DE RENDA"
+
+Var
+  salario:real;
+  valorimposto:real;
+Inicio
+escreva("Insira sua renda mensal: ")
+leia(salario)
+ se(salario<=1.903.98) entao
+ escreva("INSENTO DE IMPOSTO DE RENDA")
+ 
+ senao
+ 
+ se (salario>1.903.99) ou (salario<=2.826.67) entao
+ valorimposto<-salario
+ escreva("O valor a ser pago no imposto é: ",valorimposto*7.5/100)
+ 
+ senao
+ 
+ se (salario>2.826.66) ou(salario<=3.751.05) entao
+ valorimposto<-salario*15/100
+ escreva("O valor a ser pago no imposto é ",valorimposto)
+ 
+ senao
+ 
+ se (salario>3.751.06) ou (salario<=4.664.68) entao
+ valorimposto<-salario*22.5/100
+ escreva("O valor a ser pago no imposto é ",valorimposto)
+ 
+ senao
+ 
+ se (salario>4.664.68) entao
+    valorimposto<-salario*27.5/100
+ escreva("O valor a ser pago no imposto é ",valorimposto)
+ 
+fimse
+fimse
+fimse
+fimse
+fimse
+
+Fimalgoritmo
