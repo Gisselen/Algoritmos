@@ -1,0 +1,19 @@
+Algoritmo "questão 2 - letra a"
+Var
+numeros : vetor [0..19] de inteiro
+cont : inteiro
+
+Inicio
+para cont de 0 ate 19 faca
+   escreval("Entre com um numero:")
+   leia(numeros[cont])
+fimpara
+
+escreval()
+escreval("Os numeros digitados foram:")
+
+para cont de 0 ate 19 faca
+   escreval(numeros[cont])
+fimpara
+escreval()
+Fimalgoritmo
